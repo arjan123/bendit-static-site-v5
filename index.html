@@ -13,17 +13,17 @@
   <meta property="og:title" content="Bendit - Clean Excel, CSV and Parquet files locally with DuckDB">
   <meta property="og:description" content="Bendit is a local DuckDB desktop workbench for importing, cleaning and transforming Excel, CSV and Parquet files with SQL.">
   <meta property="og:url" content="https://bend-it.net/">
-  <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260714">
+  <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260715">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bendit - Clean Excel, CSV and Parquet files locally with DuckDB">
   <meta name="twitter:description" content="Bendit is a local DuckDB desktop workbench for importing, cleaning and transforming Excel, CSV and Parquet files with SQL.">
-  <link rel="icon" href="/assets/favicon.png?v=20260714" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260714">
-  <link rel="manifest" href="/manifest.webmanifest?v=20260714">
-  <link rel="stylesheet" href="/assets/styles.css?v=20260714">
-  <link rel="preload" as="image" href="/assets/screenshots/hero-app.jpg?v=20260714">
-  <script defer src="/site.config.js?v=20260714"></script>
-  <script defer src="/assets/site.js?v=20260714"></script>
+  <link rel="icon" href="/assets/favicon.png?v=20260715" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260715">
+  <link rel="manifest" href="/manifest.webmanifest?v=20260715">
+  <link rel="stylesheet" href="/assets/styles.css?v=20260715">
+  <link rel="preload" as="image" href="/assets/screenshots/hero-app.jpg?v=20260715">
+  <script defer src="/site.config.js?v=20260715"></script>
+  <script defer src="/assets/site.js?v=20260715"></script>
   
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -49,7 +49,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="/" aria-label="Bendit home">
-        <img src="/assets/bendit-logo.png?v=20260714" width="34" height="34" alt="" aria-hidden="true">
+        <img src="/assets/bendit-logo.png?v=20260715" width="34" height="34" alt="" aria-hidden="true">
         <span>Bendit</span>
       </a>
       <nav class="nav" aria-label="Main navigation">
@@ -72,9 +72,9 @@
       <p class="lead">Bendit is a desktop workbench for importing data files, inspecting columns, writing SQL transformations, and exporting clean results — without setting up a database server or uploading your data to the cloud.</p>
       <div class="hero-actions">
         <a class="button button-primary" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download for Windows</a>
-        <a class="button button-secondary" href="/assets/sample-orders.csv?v=20260714">Try sample data</a>
+        <a class="button button-secondary" href="/assets/sample-orders.csv?v=20260715">Try sample data</a>
       </div>
-      <p class="muted"><a href="/assets/sample-orders.parquet?v=20260714">Prefer Parquet? Download the same sample as .parquet →</a></p>
+      <p class="muted"><a href="/assets/sample-orders.parquet?v=20260715">Prefer Parquet? Download the same sample as .parquet →</a></p>
       <div class="signal-row" aria-label="Key product signals">
         <span>No signup wall</span>
         <span>Local files stay local</span>
@@ -82,7 +82,7 @@
       </div>
     </div>
     <div class="hero-visual" aria-label="Real Bendit application screenshot">
-      <img src="/assets/screenshots/hero-app.jpg?v=20260714" width="1200" height="783" alt="Bendit interface showing imported files, a DuckDB SQL transformation, and a result grid" decoding="async" fetchpriority="high">
+      <img src="/assets/screenshots/hero-app.jpg?v=20260715" width="1200" height="783" alt="Bendit interface showing imported files, a DuckDB SQL transformation, and a result grid" decoding="async" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -137,7 +137,7 @@
         <li>Export clean output for other systems</li>
       </ul>
     </div>
-    <img class="rounded-image" src="/assets/flow.svg?v=20260714" width="620" height="430" alt="Four-step Bendit workflow: import, inspect, transform, export" loading="lazy" decoding="async">
+    <img class="rounded-image" src="/assets/flow.svg?v=20260715" width="620" height="430" alt="Four-step Bendit workflow: import, inspect, transform, export" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -179,7 +179,7 @@ order by order_date desc;</code></pre>
     <h2>Check your work before you export it.</h2>
     <p class="lead">Every query lands in a fast, filterable grid — so you can sanity-check a transformation before it goes anywhere.</p>
     <figure class="showcase-figure">
-      <img src="/assets/screenshots/export-results.jpg?v=20260714" width="1200" height="783" alt="Bendit result grid with an export dialog open, showing format selection and column data" loading="lazy" decoding="async">
+      <img src="/assets/screenshots/export-results.jpg?v=20260715" width="1200" height="783" alt="Bendit result grid with an export dialog open, showing format selection and column data" loading="lazy" decoding="async">
       <figcaption>The actual Bendit result grid and export dialog — not a mockup.</figcaption>
     </figure>
     <div class="card-list">
@@ -211,6 +211,7 @@ order by order_date desc;</code></pre>
       <details><summary>Does Bendit use DuckDB?</summary><p>Yes. DuckDB is the SQL engine behind Bendit’s file transformation workflow.</p></details>
       <details><summary>Is Bendit a BI tool?</summary><p>No. Bendit is focused on cleaning, reshaping and exporting data files, not dashboards.</p></details>
       <details><summary>Does Bendit have Excel's 1,048,576 row limit?</summary><p>No. That limit comes from the Excel file format itself. Bendit runs on DuckDB, which comfortably handles tens of millions of rows on ordinary hardware — well past where Excel would refuse to open the file at all.</p></details>
+      <details><summary>Is Bendit available for macOS or Linux?</summary><p>Not yet. Bendit is Windows-only today; macOS and Linux builds are on the roadmap. <a href="mailto:support@bend-it.net?subject=Notify%20me%20about%20macOS%2FLinux%20Bendit">Email us</a> to get notified when they're available.</p></details>
     </div>
   </div>
 </section>
@@ -231,7 +232,7 @@ order by order_date desc;</code></pre>
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand footer-brand" href="/"><img src="/assets/bendit-logo.png?v=20260714" width="30" height="30" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Bendit</span></a>
+        <a class="brand footer-brand" href="/"><img src="/assets/bendit-logo.png?v=20260715" width="30" height="30" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Bendit</span></a>
         <p class="muted">A local DuckDB workbench for messy Excel, CSV and Parquet files.</p>
       </div>
       <div>

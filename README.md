@@ -50,4 +50,4 @@ The uploaded Bendit blue/purple logo is included in `assets/bendit-logo.png`. Th
 
 ## Cache busting
 
-Static assets are referenced with `?v=20260714`. When you change CSS, JavaScript, logo or screenshots, bump this version in the HTML files and `site.config.js`.
+Static assets are referenced with `?v=20260715`. When you change CSS, JavaScript, logo or screenshots, bump this version in the HTML files and `site.config.js`.

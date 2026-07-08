@@ -13,16 +13,16 @@
   <meta property="og:title" content="Bendit examples - clean files with DuckDB SQL">
   <meta property="og:description" content="Practical DuckDB SQL examples for cleaning messy Excel and CSV files locally with Bendit.">
   <meta property="og:url" content="https://bend-it.net/examples.html">
-  <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260714">
+  <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260715">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bendit examples - clean files with DuckDB SQL">
   <meta name="twitter:description" content="Practical DuckDB SQL examples for cleaning messy Excel and CSV files locally with Bendit.">
-  <link rel="icon" href="/assets/favicon.png?v=20260714" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260714">
-  <link rel="manifest" href="/manifest.webmanifest?v=20260714">
-  <link rel="stylesheet" href="/assets/styles.css?v=20260714">
-  <script defer src="/site.config.js?v=20260714"></script>
-  <script defer src="/assets/site.js?v=20260714"></script>
+  <link rel="icon" href="/assets/favicon.png?v=20260715" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260715">
+  <link rel="manifest" href="/manifest.webmanifest?v=20260715">
+  <link rel="stylesheet" href="/assets/styles.css?v=20260715">
+  <script defer src="/site.config.js?v=20260715"></script>
+  <script defer src="/assets/site.js?v=20260715"></script>
   
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -44,7 +44,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="/" aria-label="Bendit home">
-        <img src="/assets/bendit-logo.png?v=20260714" width="34" height="34" alt="" aria-hidden="true">
+        <img src="/assets/bendit-logo.png?v=20260715" width="34" height="34" alt="" aria-hidden="true">
         <span>Bendit</span>
       </a>
       <nav class="nav" aria-label="Main navigation">
@@ -64,8 +64,8 @@
     <p class="eyebrow">Examples</p>
     <h1>Example DuckDB SQL transformations for messy files.</h1>
     <p class="lead">These examples are intentionally boring. That is the point. Bendit is for real-world file cleanup work.</p>
-    <a class="button button-secondary" href="/assets/sample-orders.csv?v=20260714">Download sample CSV</a>
-    <a class="button button-secondary" href="/assets/sample-orders.parquet?v=20260714">Download sample Parquet</a>
+    <a class="button button-secondary" href="/assets/sample-orders.csv?v=20260715">Download sample CSV</a>
+    <a class="button button-secondary" href="/assets/sample-orders.parquet?v=20260715">Download sample Parquet</a>
     <h2>Clean names, dates and amounts</h2>
     <pre class="code"><code>select
   trim(customer_name) as customer_name,
@@ -90,6 +90,43 @@ order by count desc;</code></pre>
 from clean_orders
 where amount &gt; 0
 order by order_date;</code></pre>
+    <h2>Fix Excel's serial date numbers</h2>
+    <pre class="code"><code>select
+  order_id,
+  date '1899-12-30' + interval (excel_date_serial) day as order_date
+from imported_excel;</code></pre>
+    <p class="muted">Excel stores dates as a day count from 1899-12-30, leap-year bug included. This turns raw serial numbers back into real dates without touching the source file.</p>
+    <h2>Standardize mixed date formats</h2>
+    <pre class="code"><code>select
+  order_id,
+  coalesce(
+    try_cast(order_date as date),
+    try_strptime(order_date, '%d-%m-%Y')::date,
+    try_strptime(order_date, '%Y/%m/%d')::date
+  ) as order_date
+from orders;</code></pre>
+    <p class="muted">Real exports mix ISO dates, European dd-mm-yyyy and slash-separated formats in the same column. Try each format in order and keep the first one that parses.</p>
+    <h2>Keep only the latest row per customer</h2>
+    <pre class="code"><code>select * exclude (rn)
+from (
+  select *,
+    row_number() over (
+      partition by customer_name
+      order by order_date desc
+    ) as rn
+  from orders
+)
+where rn = 1;</code></pre>
+    <p class="muted">Common with repeated exports from the same source system — several rows per customer, only the newest one is current.</p>
+    <h2>Join two files without a database</h2>
+    <pre class="code"><code>select
+  o.order_id,
+  o.customer_name,
+  c.region
+from orders o
+left join customers c
+  on lower(trim(o.customer_name)) = lower(trim(c.customer_name));</code></pre>
+    <p class="muted">Import both files, then join them directly — no staging tables, no separate ETL step.</p>
   </div>
 </section>
 
@@ -97,7 +134,7 @@ order by order_date;</code></pre>
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand footer-brand" href="/"><img src="/assets/bendit-logo.png?v=20260714" width="30" height="30" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Bendit</span></a>
+        <a class="brand footer-brand" href="/"><img src="/assets/bendit-logo.png?v=20260715" width="30" height="30" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Bendit</span></a>
         <p class="muted">A local DuckDB workbench for messy Excel, CSV and Parquet files.</p>
       </div>
       <div>
