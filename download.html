@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Download Bendit for Windows from GitHub Releases</title>
-  <meta name="description" content="Download Bendit for Windows from GitHub Releases. Bendit is a local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files.">
+  <title>Download Bendit for Windows</title>
+  <meta name="description" content="Download Bendit for Windows. Bendit is a local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files.">
   <link rel="canonical" href="https://bend-it.net/download.html">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bendit">
-  <meta property="og:title" content="Download Bendit for Windows from GitHub Releases">
-  <meta property="og:description" content="Download Bendit for Windows from GitHub Releases. Bendit is a local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files.">
+  <meta property="og:title" content="Download Bendit for Windows">
+  <meta property="og:description" content="Download Bendit for Windows. Bendit is a local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files.">
   <meta property="og:url" content="https://bend-it.net/download.html">
-  <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260710">
+  <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260712">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Download Bendit for Windows from GitHub Releases">
-  <meta name="twitter:description" content="Download Bendit for Windows from GitHub Releases. Bendit is a local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files.">
-  <link rel="icon" href="/assets/favicon.png?v=20260710" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260710">
-  <link rel="manifest" href="/manifest.webmanifest?v=20260710">
-  <link rel="stylesheet" href="/assets/styles.css?v=20260710">
-  <script defer src="/site.config.js?v=20260710"></script>
-  <script defer src="/assets/site.js?v=20260710"></script>
+  <meta name="twitter:title" content="Download Bendit for Windows">
+  <meta name="twitter:description" content="Download Bendit for Windows. Bendit is a local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files.">
+  <link rel="icon" href="/assets/favicon.png?v=20260712" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260712">
+  <link rel="manifest" href="/manifest.webmanifest?v=20260712">
+  <link rel="stylesheet" href="/assets/styles.css?v=20260712">
+  <script defer src="/site.config.js?v=20260712"></script>
+  <script defer src="/assets/site.js?v=20260712"></script>
   
   
 </head>
@@ -30,7 +30,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="/" aria-label="Bendit home">
-        <img src="/assets/bendit-logo.png?v=20260710" width="34" height="34" alt="" aria-hidden="true">
+        <img src="/assets/bendit-logo.png?v=20260712" width="34" height="34" alt="" aria-hidden="true">
         <span>Bendit</span>
       </a>
       <nav class="nav" aria-label="Main navigation">
@@ -38,7 +38,6 @@
 <a href="/examples.html">Examples</a>
 <a href="/download.html" aria-current="page">Download</a>
 <a href="/show-hn.html">Show HN</a>
-<a data-config="githubRepo" href="https://github.com/arjan123/bendit-static-site-v5">GitHub</a>
 <a href="/support.html">Support</a>
       </nav>
       <a class="button button-small" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download</a>
@@ -49,33 +48,57 @@
 <section class="section">
   <div class="container narrow">
     <p class="eyebrow">Download</p>
-    <h1>Download Bendit for Windows from GitHub Releases.</h1>
-    <p class="lead">Get the local DuckDB workbench for importing, cleaning and transforming Excel, CSV and Parquet files. Release assets and version history are hosted on GitHub.</p>
+    <h1>Download Bendit for Windows.</h1>
+    <p class="lead">Get the local DuckDB workbench for importing, cleaning and transforming Excel, CSV and Parquet files. No installer, no account, no sign-in.</p>
     <div class="download-card">
       <div>
         <h2>Windows x64</h2>
         <p class="muted">Latest version: <span data-config-text="windowsVersion">0.1.0</span>. Local desktop build. No account required.</p>
       </div>
-      <a class="button button-primary" data-config="downloadUrl" href="https://github.com/arjan123/bendit-static-site-v5/releases/latest/download/Bendit-Windows-x64.zip">Download latest build</a>
+      <a class="button button-primary" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download latest build</a>
     </div>
-    <div class="note-box" id="download-not-ready">
-      <strong>Before launch:</strong> create a GitHub release and upload <code>Bendit-Windows-x64.zip</code> as a release asset.
+
+    <h2>How to install</h2>
+    <ol class="steps">
+      <li><strong>Download the zip.</strong> Click "Download latest build" above to get <code>Bendit-Windows-x64.zip</code>.</li>
+      <li><strong>Extract it first.</strong> Bendit won't run correctly straight out of the zip. Right-click the downloaded file and choose <em>Extract All…</em> (or use your preferred unzip tool), and pick a folder you're happy to keep it in — there's nothing to install, so wherever you extract it is where it'll live.</li>
+      <li><strong>Open the extracted folder</strong> and double-click <code>Bendit.exe</code>.</li>
+      <li><strong>If Windows shows a SmartScreen warning</strong> ("Windows protected your PC"), this happens because the build isn't code-signed yet, not because anything is wrong. Click <em>More info</em>, then <em>Run anyway</em>.</li>
+      <li><strong>That's it.</strong> Bendit is portable — no installer, no registry entries, no background services. To update later, just download a new build and repeat these steps in a new folder.</li>
+    </ol>
+
+    <h2>Quick start: import and query in a minute</h2>
+    <ol class="steps">
+      <li><strong>Open Bendit</strong> and import a file — drag <code>sample-orders.csv</code> or <code>sample-orders.parquet</code> onto the window, or use the Import button and pick either one. Bendit reads the columns automatically; there's no schema to define up front, and the steps are identical whether the file is CSV or Parquet.</li>
+      <li><strong>Find the table name.</strong> Bendit names the imported table after the file (shown in the left-hand panel, e.g. <code>sample_orders</code>) — that's what you'll use in the SQL editor.</li>
+      <li><strong>Look at the raw data first:</strong>
+        <pre class="code"><code>select * from sample_orders limit 10;</code></pre>
+      </li>
+      <li><strong>Clean it up with SQL.</strong> The sample data has padded names, mixed date formats and comma-decimal amounts on purpose — this is what a normal cleanup query looks like:
+        <pre class="code"><code>select
+  trim(customer_name) as customer_name,
+  try_cast(order_date as date) as order_date,
+  replace(amount, ',', '.')::decimal(18,2) as amount
+from sample_orders
+where customer_name is not null
+order by order_date desc;</code></pre>
+      </li>
+      <li><strong>Export the result</strong> once the grid looks right — same export step regardless of whether you started from CSV or Parquet.</li>
+    </ol>
+    <p><a class="text-link" href="/examples.html">See more SQL examples →</a></p>
+
+    <div class="support-card">
+      <h2>Report download issues</h2>
+      <p class="muted">Installer blocked, missing asset, antivirus warning, or startup bug? Email us.</p>
+      <a class="text-link" href="mailto:support@bend-it.net">Email support@bend-it.net →</a>
     </div>
-    <div class="two-col small-gap">
-      <div class="support-card">
-        <h2>Release history</h2>
-        <p class="muted">See all versions, release notes and downloadable assets on GitHub Releases.</p>
-        <a class="text-link" data-config="githubReleasesUrl" href="https://github.com/arjan123/bendit-static-site-v5/releases">Open GitHub Releases →</a>
-      </div>
-      <div class="support-card">
-        <h2>Report download issues</h2>
-        <p class="muted">Installer blocked, missing asset, antivirus warning, or startup bug? Email us.</p>
-        <a class="text-link" href="mailto:support@bend-it.net">Email support@bend-it.net →</a>
-      </div>
-    </div>
+
     <h2>Good first test</h2>
-    <p>Use a messy operational export: customers, orders, invoices, stock items, planning data, or any CSV/Excel file that normally requires manual cleanup.</p>
-    <a class="text-link" href="/assets/sample-orders.csv?v=20260710">Download sample CSV →</a>
+    <p>Use a messy operational export: customers, orders, invoices, stock items, planning data, or any CSV/Excel/Parquet file that normally requires manual cleanup.</p>
+    <p>
+      <a class="text-link" href="/assets/sample-orders.csv?v=20260712">Download sample CSV →</a><br>
+      <a class="text-link" href="/assets/sample-orders.parquet?v=20260712">Download sample Parquet →</a>
+    </p>
   </div>
 </section>
 
@@ -83,7 +106,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <a class="brand footer-brand" href="/"><img src="/assets/bendit-logo.png?v=20260710" width="30" height="30" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Bendit</span></a>
+        <a class="brand footer-brand" href="/"><img src="/assets/bendit-logo.png?v=20260712" width="30" height="30" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Bendit</span></a>
         <p class="muted">A local DuckDB workbench for messy Excel, CSV and Parquet files.</p>
       </div>
       <div>
@@ -99,7 +122,6 @@
           <li><a href="/show-hn.html">Show HN page</a></li>
           <li><a href="/releases.html">Releases</a></li>
           <li><a href="mailto:support@bend-it.net">Email support</a></li>
-          <li><a data-config="githubRepo" href="https://github.com/arjan123/bendit-static-site-v5">GitHub repo</a></li>
           <li><a href="/privacy.html">Privacy</a></li>
           <li><a href="/support.html">Support</a></li>
         </ul>
