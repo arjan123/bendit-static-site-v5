@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://YOUR_DOMAIN_OR_AZURE_STATIC_WEB_APP_URL/sitemap.xml
+
+Sitemap: https://bend-it.net/sitemap.xml

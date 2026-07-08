@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bendit support</title>
-  <meta name="description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
-  <link rel="canonical" href="https://bend-it.net/support.html">
+  <title>Join CSV files with DuckDB SQL locally | Bendit</title>
+  <meta name="description" content="Join multiple CSV files locally using DuckDB SQL and export the cleaned result with Bendit.">
+  <link rel="canonical" href="https://bend-it.net/use-cases/join-csv-files.html">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bendit">
-  <meta property="og:title" content="Bendit support">
-  <meta property="og:description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
-  <meta property="og:url" content="https://bend-it.net/support.html">
+  <meta property="og:title" content="Join CSV files with DuckDB SQL locally | Bendit">
+  <meta property="og:description" content="Join multiple CSV files locally using DuckDB SQL and export the cleaned result with Bendit.">
+  <meta property="og:url" content="https://bend-it.net/use-cases/join-csv-files.html">
   <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260710">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bendit support">
-  <meta name="twitter:description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
+  <meta name="twitter:title" content="Join CSV files with DuckDB SQL locally | Bendit">
+  <meta name="twitter:description" content="Join multiple CSV files locally using DuckDB SQL and export the cleaned result with Bendit.">
   <link rel="icon" href="/assets/favicon.png?v=20260710" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260710">
   <link rel="manifest" href="/manifest.webmanifest?v=20260710">
@@ -23,7 +23,21 @@
   <script defer src="/site.config.js?v=20260710"></script>
   <script defer src="/assets/site.js?v=20260710"></script>
   
-  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Join CSV files with DuckDB SQL locally",
+  "description": "Join multiple CSV files locally using DuckDB SQL and export the cleaned result with Bendit.",
+  "author": {
+    "@type": "Person",
+    "name": "Arjan van Dijk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bendit"
+  },
+  "url": "https://bend-it.net/use-cases/join-csv-files.html"
+}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -39,7 +53,7 @@
 <a href="/download.html">Download</a>
 <a href="/show-hn.html">Show HN</a>
 <a data-config="githubRepo" href="https://github.com/arjan123/bendit-static-site-v5">GitHub</a>
-<a href="/support.html" aria-current="page">Support</a>
+<a href="/support.html">Support</a>
       </nav>
       <a class="button button-small" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download</a>
     </div>
@@ -48,22 +62,37 @@
     
 <section class="section">
   <div class="container narrow">
-    <p class="eyebrow">Support</p>
-    <h1>Support for Bendit.</h1>
-    <p class="lead">Found a bug, missing a file transformation feature, or want to share a nasty Excel/CSV case? Email us directly — no account needed.</p>
-    <div class="support-card">
-      <h2>Email support</h2>
-      <p class="muted">Best for bugs, feature requests, file import issues and reproducible transformation problems.</p>
-      <a class="button button-primary" href="mailto:support@bend-it.net">Email support@bend-it.net</a>
+    <p class="eyebrow">Use case</p>
+    <h1>Join CSV files with DuckDB SQL locally.</h1>
+    <p class="lead">Bendit is useful when two exports belong together but live as separate CSV files: orders and customers, stock and products, invoices and payments.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download Bendit</a>
+      <a class="button button-secondary" href="/examples.html">View examples</a>
     </div>
-    <h2>Useful details to include</h2>
-    <ul class="check-list">
-      <li>What file type you used: Excel, CSV or Parquet</li>
-      <li>Approximate file size and number of rows</li>
-      <li>What you expected Bendit to do</li>
-      <li>What happened instead</li>
-      <li>A small anonymized sample file, if possible</li>
-    </ul>
+    <h2>Typical cases</h2>
+    <ul class="check-list"><li>Need to match files from different systems</li><li>Excel VLOOKUP becomes fragile</li><li>Want a repeatable join query instead of manual copy/paste</li></ul>
+    <h2>Example SQL</h2>
+    <pre class="code"><code>select
+  o.order_id,
+  c.customer_name,
+  o.order_date,
+  o.amount
+from orders o
+left join customers c on c.customer_id = o.customer_id
+where o.amount &gt; 0;</code></pre>
+    <h2>How Bendit helps</h2>
+    <ol class="steps">
+      <li><strong>Import</strong> the file directly into the local workbench.</li>
+      <li><strong>Inspect</strong> columns, types and preview rows.</li>
+      <li><strong>Transform</strong> with DuckDB SQL.</li>
+      <li><strong>Export</strong> a clean CSV or Parquet result.</li>
+    </ol>
+  </div>
+</section>
+<section class="section alternate">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">Related</p><h2>More Bendit workflows.</h2></div>
+    <div class="three-grid"><a class="link-card" href="/use-cases/query-csv-with-sql.html"><h3>Query CSV with SQL</h3><p>Related Bendit workflow.</p></a><a class="link-card" href="/use-cases/clean-messy-excel-files.html"><h3>Clean messy Excel files</h3><p>Related Bendit workflow.</p></a><a class="link-card" href="/use-cases/local-etl-tool.html"><h3>Local ETL tool</h3><p>Related Bendit workflow.</p></a></div>
   </div>
 </section>
 

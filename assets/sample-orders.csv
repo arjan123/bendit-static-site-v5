@@ -1,0 +1,5 @@
+order_id,customer_name,order_date,amount,region
+1001, ACME Tools ,2026-07-06,"1240,50",West
+1002,Blue Parts BV,2026/07/05,"842,10",South
+1003,Northwind,,304.95,North
+1004, ACME Tools ,06-07-2026,"99,95",West

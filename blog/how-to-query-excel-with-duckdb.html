@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bendit support</title>
-  <meta name="description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
-  <link rel="canonical" href="https://bend-it.net/support.html">
+  <title>How to query Excel files with DuckDB | Bendit</title>
+  <meta name="description" content="A practical workflow for querying Excel files with DuckDB SQL locally using Bendit.">
+  <link rel="canonical" href="https://bend-it.net/blog/how-to-query-excel-with-duckdb.html">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bendit">
-  <meta property="og:title" content="Bendit support">
-  <meta property="og:description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
-  <meta property="og:url" content="https://bend-it.net/support.html">
+  <meta property="og:title" content="How to query Excel files with DuckDB | Bendit">
+  <meta property="og:description" content="A practical workflow for querying Excel files with DuckDB SQL locally using Bendit.">
+  <meta property="og:url" content="https://bend-it.net/blog/how-to-query-excel-with-duckdb.html">
   <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260710">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bendit support">
-  <meta name="twitter:description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
+  <meta name="twitter:title" content="How to query Excel files with DuckDB | Bendit">
+  <meta name="twitter:description" content="A practical workflow for querying Excel files with DuckDB SQL locally using Bendit.">
   <link rel="icon" href="/assets/favicon.png?v=20260710" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260710">
   <link rel="manifest" href="/manifest.webmanifest?v=20260710">
@@ -23,7 +23,22 @@
   <script defer src="/site.config.js?v=20260710"></script>
   <script defer src="/assets/site.js?v=20260710"></script>
   
-  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to query Excel files with DuckDB",
+  "description": "A practical workflow for querying Excel files with DuckDB SQL locally using Bendit.",
+  "author": {
+    "@type": "Person",
+    "name": "Arjan van Dijk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bendit"
+  },
+  "url": "https://bend-it.net/blog/how-to-query-excel-with-duckdb.html",
+  "datePublished": "2026-07-06"
+}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -39,7 +54,7 @@
 <a href="/download.html">Download</a>
 <a href="/show-hn.html">Show HN</a>
 <a data-config="githubRepo" href="https://github.com/arjan123/bendit-static-site-v5">GitHub</a>
-<a href="/support.html" aria-current="page">Support</a>
+<a href="/support.html">Support</a>
       </nav>
       <a class="button button-small" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download</a>
     </div>
@@ -47,24 +62,21 @@
   <main id="main">
     
 <section class="section">
-  <div class="container narrow">
-    <p class="eyebrow">Support</p>
-    <h1>Support for Bendit.</h1>
-    <p class="lead">Found a bug, missing a file transformation feature, or want to share a nasty Excel/CSV case? Email us directly — no account needed.</p>
-    <div class="support-card">
-      <h2>Email support</h2>
-      <p class="muted">Best for bugs, feature requests, file import issues and reproducible transformation problems.</p>
-      <a class="button button-primary" href="mailto:support@bend-it.net">Email support@bend-it.net</a>
-    </div>
-    <h2>Useful details to include</h2>
-    <ul class="check-list">
-      <li>What file type you used: Excel, CSV or Parquet</li>
-      <li>Approximate file size and number of rows</li>
-      <li>What you expected Bendit to do</li>
-      <li>What happened instead</li>
-      <li>A small anonymized sample file, if possible</li>
-    </ul>
-  </div>
+  <article class="container narrow article">
+    <p class="eyebrow">Article</p>
+    <h1>How to query Excel files with DuckDB.</h1>
+    <p>Excel files often start as simple spreadsheets and slowly become data sources. The problem is that manual filtering, formulas and copy/paste steps are hard to repeat.</p><p>Bendit makes this workflow simpler: import the Excel file, inspect the columns, write DuckDB SQL, preview the result and export a clean file.</p>
+    <h2>Example</h2>
+    <pre class="code"><code>select
+  trim(customer_name) as customer_name,
+  try_cast(order_date as date) as order_date,
+  try_cast(amount as decimal(18,2)) as amount
+from imported_excel
+where amount is not null;</code></pre>
+    <h2>Where Bendit fits</h2>
+    <p>Bendit is a practical desktop layer around this workflow: import file, inspect columns, write SQL, preview result, export clean output.</p>
+    <p><a class="text-link" href="/download.html">Download Bendit →</a></p>
+  </article>
 </section>
 
   </main>

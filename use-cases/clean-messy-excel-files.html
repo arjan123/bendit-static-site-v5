@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found | Bendit</title>
-  <meta name="description" content="The requested Bendit page was not found.">
-  <link rel="canonical" href="https://bend-it.net/404.html">
+  <title>Clean messy Excel files locally with DuckDB | Bendit</title>
+  <meta name="description" content="Import messy Excel files, inspect columns, run DuckDB SQL transformations and export clean CSV or Parquet results locally.">
+  <link rel="canonical" href="https://bend-it.net/use-cases/clean-messy-excel-files.html">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bendit">
-  <meta property="og:title" content="Page not found | Bendit">
-  <meta property="og:description" content="The requested Bendit page was not found.">
-  <meta property="og:url" content="https://bend-it.net/404.html">
+  <meta property="og:title" content="Clean messy Excel files locally with DuckDB | Bendit">
+  <meta property="og:description" content="Import messy Excel files, inspect columns, run DuckDB SQL transformations and export clean CSV or Parquet results locally.">
+  <meta property="og:url" content="https://bend-it.net/use-cases/clean-messy-excel-files.html">
   <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260710">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Page not found | Bendit">
-  <meta name="twitter:description" content="The requested Bendit page was not found.">
+  <meta name="twitter:title" content="Clean messy Excel files locally with DuckDB | Bendit">
+  <meta name="twitter:description" content="Import messy Excel files, inspect columns, run DuckDB SQL transformations and export clean CSV or Parquet results locally.">
   <link rel="icon" href="/assets/favicon.png?v=20260710" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260710">
   <link rel="manifest" href="/manifest.webmanifest?v=20260710">
@@ -23,7 +23,21 @@
   <script defer src="/site.config.js?v=20260710"></script>
   <script defer src="/assets/site.js?v=20260710"></script>
   
-  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Clean messy Excel files locally with DuckDB",
+  "description": "Import messy Excel files, inspect columns, run DuckDB SQL transformations and export clean CSV or Parquet results locally.",
+  "author": {
+    "@type": "Person",
+    "name": "Arjan van Dijk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bendit"
+  },
+  "url": "https://bend-it.net/use-cases/clean-messy-excel-files.html"
+}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -48,13 +62,35 @@
     
 <section class="section">
   <div class="container narrow">
-    <p class="eyebrow">404</p>
-    <h1>That page is not here.</h1>
-    <p class="lead">Try the homepage, examples or download page.</p>
+    <p class="eyebrow">Use case</p>
+    <h1>Clean messy Excel files locally with DuckDB.</h1>
+    <p class="lead">When an Excel file has inconsistent dates, merged-looking data, empty rows, bad number formats or manual fixes hidden everywhere, Bendit gives you a repeatable SQL-first cleanup workflow.</p>
     <div class="hero-actions">
-      <a class="button button-primary" href="/">Home</a>
-      <a class="button button-secondary" href="/examples.html">Examples</a>
+      <a class="button button-primary" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download Bendit</a>
+      <a class="button button-secondary" href="/examples.html">View examples</a>
     </div>
+    <h2>Typical cases</h2>
+    <ul class="check-list"><li>Supplier exports with odd headers</li><li>Finance files with decimal commas and text amounts</li><li>Operational sheets with blank rows and inconsistent dates</li></ul>
+    <h2>Example SQL</h2>
+    <pre class="code"><code>select
+  trim(customer_name) as customer_name,
+  try_cast(order_date as date) as order_date,
+  replace(amount, ',', '.')::decimal(18,2) as amount
+from imported_excel
+where customer_name is not null;</code></pre>
+    <h2>How Bendit helps</h2>
+    <ol class="steps">
+      <li><strong>Import</strong> the file directly into the local workbench.</li>
+      <li><strong>Inspect</strong> columns, types and preview rows.</li>
+      <li><strong>Transform</strong> with DuckDB SQL.</li>
+      <li><strong>Export</strong> a clean CSV or Parquet result.</li>
+    </ol>
+  </div>
+</section>
+<section class="section alternate">
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">Related</p><h2>More Bendit workflows.</h2></div>
+    <div class="three-grid"><a class="link-card" href="/use-cases/query-csv-with-sql.html"><h3>Query CSV with SQL</h3><p>Related Bendit workflow.</p></a><a class="link-card" href="/use-cases/convert-excel-to-parquet.html"><h3>Convert Excel to Parquet</h3><p>Related Bendit workflow.</p></a><a class="link-card" href="/use-cases/local-etl-tool.html"><h3>Local ETL tool</h3><p>Related Bendit workflow.</p></a></div>
   </div>
 </section>
 

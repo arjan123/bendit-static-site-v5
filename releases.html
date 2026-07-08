@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bendit support</title>
-  <meta name="description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
-  <link rel="canonical" href="https://bend-it.net/support.html">
+  <title>Bendit releases and download history</title>
+  <meta name="description" content="Bendit releases and download history. Bendit is a local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files.">
+  <link rel="canonical" href="https://bend-it.net/releases.html">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bendit">
-  <meta property="og:title" content="Bendit support">
-  <meta property="og:description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
-  <meta property="og:url" content="https://bend-it.net/support.html">
+  <meta property="og:title" content="Bendit releases and download history">
+  <meta property="og:description" content="Bendit releases and download history. Bendit is a local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files.">
+  <meta property="og:url" content="https://bend-it.net/releases.html">
   <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260710">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bendit support">
-  <meta name="twitter:description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
+  <meta name="twitter:title" content="Bendit releases and download history">
+  <meta name="twitter:description" content="Bendit releases and download history. Bendit is a local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files.">
   <link rel="icon" href="/assets/favicon.png?v=20260710" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260710">
   <link rel="manifest" href="/manifest.webmanifest?v=20260710">
@@ -36,10 +36,10 @@
       <nav class="nav" aria-label="Main navigation">
         <a href="/">Home</a>
 <a href="/examples.html">Examples</a>
-<a href="/download.html">Download</a>
+<a href="/download.html" aria-current="page">Download</a>
 <a href="/show-hn.html">Show HN</a>
 <a data-config="githubRepo" href="https://github.com/arjan123/bendit-static-site-v5">GitHub</a>
-<a href="/support.html" aria-current="page">Support</a>
+<a href="/support.html">Support</a>
       </nav>
       <a class="button button-small" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download</a>
     </div>
@@ -48,22 +48,34 @@
     
 <section class="section">
   <div class="container narrow">
-    <p class="eyebrow">Support</p>
-    <h1>Support for Bendit.</h1>
-    <p class="lead">Found a bug, missing a file transformation feature, or want to share a nasty Excel/CSV case? Email us directly — no account needed.</p>
-    <div class="support-card">
-      <h2>Email support</h2>
-      <p class="muted">Best for bugs, feature requests, file import issues and reproducible transformation problems.</p>
-      <a class="button button-primary" href="mailto:support@bend-it.net">Email support@bend-it.net</a>
+    <p class="eyebrow">Releases</p>
+    <h1>Bendit releases.</h1>
+    <p class="lead">Bendit release builds, version history and downloadable assets are hosted on GitHub Releases.</p>
+
+    <div class="download-card">
+      <div>
+        <h2>Latest Windows build</h2>
+        <p class="muted">Version <span data-config-text="windowsVersion">0.1.0</span>. The direct download points to the latest GitHub release asset.</p>
+      </div>
+      <a class="button button-primary" data-config="downloadUrl" href="https://github.com/arjan123/bendit-static-site-v5/releases/latest/download/Bendit-Windows-x64.zip">Download latest build</a>
     </div>
-    <h2>Useful details to include</h2>
-    <ul class="check-list">
-      <li>What file type you used: Excel, CSV or Parquet</li>
-      <li>Approximate file size and number of rows</li>
-      <li>What you expected Bendit to do</li>
-      <li>What happened instead</li>
-      <li>A small anonymized sample file, if possible</li>
-    </ul>
+
+    <div class="two-col small-gap">
+      <div class="support-card">
+        <h2>All releases</h2>
+        <p class="muted">Use this for older versions, release notes and checks before upgrading.</p>
+        <a class="text-link" data-config="githubReleasesUrl" href="https://github.com/arjan123/bendit-static-site-v5/releases">Open GitHub Releases →</a>
+      </div>
+      <div class="support-card">
+        <h2>Release problems?</h2>
+        <p class="muted">Found a bug in this release or something broke after upgrading? Email us.</p>
+        <a class="text-link" href="mailto:support@bend-it.net">Email support@bend-it.net →</a>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>Maintainer note:</strong> after publishing a new GitHub release, update <code>windowsVersion</code> in <code>site.config.js</code>. The latest-download link can stay stable if the release asset keeps the same filename.
+    </div>
   </div>
 </section>
 

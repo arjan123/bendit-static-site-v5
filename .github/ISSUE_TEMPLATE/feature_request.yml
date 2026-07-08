@@ -1,0 +1,24 @@
+name: Feature request
+description: Suggest a Bendit transformation, import/export or workflow feature
+title: "Feature: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What painful workflow should Bendit make easier?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Suggested solution
+      description: Describe the feature or workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example files or SQL
+      description: Add a small anonymized example if possible.

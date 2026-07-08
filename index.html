@@ -1,10 +1,212 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Bendit is a modern DuckDB SQL client for importing, profiling, cleaning, transforming and exporting messy CSV, Excel and Parquet data locally.">
-<meta name="robots" content="index, follow"><meta name="theme-color" content="#0a0a12"><meta name="color-scheme" content="dark">
-<meta property="og:site_name" content="Bendit"><meta property="og:title" content="Bendit — bend messy data into shape"><meta property="og:description" content="From Excel chaos to flexible SQL — import, transform and explore data at desktop speed."><meta property="og:type" content="website"><meta property="og:image" content="assets/images/screenshot-main.png">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Bendit — bend messy data into shape"><meta name="twitter:description" content="A modern DuckDB desktop client for Excel, CSV and Parquet workflows."><meta name="twitter:image" content="assets/images/screenshot-main.png">
-<title>Bendit — DuckDB SQL client</title><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="assets/images/bendit-logo.png"><link rel="manifest" href="manifest.webmanifest"><link rel="canonical" href="https://YOUR_DOMAIN_OR_AZURE_STATIC_WEB_APP_URL/"><link rel="stylesheet" href="assets/css/styles.css"><script src="site.config.js" defer></script><script src="assets/js/app.js" defer></script>
-</head><body><header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="Bendit home"><img class="js-logo" src="assets/images/bendit-logo.png" alt="Bendit logo"><span class="brand-text"><span class="js-name">Bendit</span><span class="version-pill js-version">v1.1</span></span></a><button class="mobile-toggle" aria-label="Toggle navigation">☰</button><nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#features">Features</a><a href="index.html#screenshots">Screenshots</a><a href="index.html#pricing">License</a><a href="download.html">Download</a><a href="support.html">Support</a><a class="nav-cta" href="download.html">Get Bendit</a></nav></div></header>
-<main id="home-root"></main><footer id="site-footer" class="footer"></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bendit - Clean Excel, CSV and Parquet files locally with DuckDB</title>
+  <meta name="description" content="Bendit is a local DuckDB desktop workbench for importing, cleaning and transforming Excel, CSV and Parquet files with SQL.">
+  <link rel="canonical" href="https://bend-it.net/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bendit">
+  <meta property="og:title" content="Bendit - Clean Excel, CSV and Parquet files locally with DuckDB">
+  <meta property="og:description" content="Bendit is a local DuckDB desktop workbench for importing, cleaning and transforming Excel, CSV and Parquet files with SQL.">
+  <meta property="og:url" content="https://bend-it.net/">
+  <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260710">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bendit - Clean Excel, CSV and Parquet files locally with DuckDB">
+  <meta name="twitter:description" content="Bendit is a local DuckDB desktop workbench for importing, cleaning and transforming Excel, CSV and Parquet files with SQL.">
+  <link rel="icon" href="/assets/favicon.png?v=20260710" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260710">
+  <link rel="manifest" href="/manifest.webmanifest?v=20260710">
+  <link rel="stylesheet" href="/assets/styles.css?v=20260710">
+  <link rel="preload" as="image" href="/assets/hero-screenshot.svg?v=20260710">
+  <script defer src="/site.config.js?v=20260710"></script>
+  <script defer src="/assets/site.js?v=20260710"></script>
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Bendit",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Windows",
+  "description": "A local DuckDB desktop workbench for cleaning and transforming Excel, CSV and Parquet files with SQL.",
+  "author": {
+    "@type": "Person",
+    "name": "Arjan van Dijk"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "url": "https://bend-it.net/"
+}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/" aria-label="Bendit home">
+        <img src="/assets/bendit-logo.png?v=20260710" width="34" height="34" alt="" aria-hidden="true">
+        <span>Bendit</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="/" aria-current="page">Home</a>
+<a href="/examples.html">Examples</a>
+<a href="/download.html">Download</a>
+<a href="/show-hn.html">Show HN</a>
+<a data-config="githubRepo" href="https://github.com/arjan123/bendit-static-site-v5">GitHub</a>
+<a href="/support.html">Support</a>
+      </nav>
+      <a class="button button-small" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download</a>
+    </div>
+  </header>
+  <main id="main">
+    
+<section class="hero section">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Local-first · DuckDB-powered · Windows desktop</p>
+      <h1>Clean messy Excel, CSV and Parquet files locally with DuckDB.</h1>
+      <p class="lead">Bendit is a desktop workbench for importing data files, inspecting columns, writing SQL transformations, and exporting clean results — without setting up a database server or uploading your data to the cloud.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download for Windows</a>
+        <a class="button button-secondary" href="/assets/sample-orders.csv?v=20260710">Try sample data</a>
+      </div>
+      <div class="signal-row" aria-label="Key product signals">
+        <span>No signup wall</span>
+        <span>Local files stay local</span>
+        <span>SQL-first workflow</span>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="Screenshot-style product preview">
+      <img src="/assets/hero-screenshot.svg?v=20260710" width="720" height="516" alt="Bendit interface showing imported files, a DuckDB SQL transformation, and a result grid" decoding="async" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container problem-grid">
+    <div>
+      <p class="eyebrow">The annoying middle ground</p>
+      <h2>When Excel is not enough, but a full ETL stack is overkill.</h2>
+    </div>
+    <div class="card-list">
+      <article class="card"><h3>Messy input</h3><p>Headers are wrong, date columns are inconsistent, CSV delimiters are weird, and someone pasted totals into the middle of the file.</p></article>
+      <article class="card"><h3>Repeatable cleanup</h3><p>Use DuckDB SQL transformations instead of doing the same fragile manual Excel steps again next month.</p></article>
+      <article class="card"><h3>Local by default</h3><p>Keep customer files, financial exports and operational data on your own machine instead of uploading them to another SaaS tool.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alternate">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Workflow</p>
+      <h2>Import → inspect → transform → export.</h2>
+      <p>Bendit keeps the flow deliberately small. Open a file, inspect its columns, write SQL, preview the output and export clean CSV or Parquet.</p>
+      <ul class="check-list">
+        <li>Import Excel, CSV and Parquet files</li>
+        <li>Query and transform with DuckDB SQL</li>
+        <li>Preview results in a fast grid</li>
+        <li>Export clean output for other systems</li>
+      </ul>
+    </div>
+    <img class="rounded-image" src="/assets/flow.svg?v=20260710" width="620" height="430" alt="Four-step Bendit workflow: import, inspect, transform, export" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Real examples</p>
+      <h2>Built around the boring file problems that waste hours.</h2>
+    </div>
+    <div class="three-grid">
+      <a class="link-card" href="/use-cases/clean-messy-excel-files.html"><h3>Clean messy Excel files</h3><p>Trim columns, cast dates, normalize numbers and export clean results.</p></a>
+      <a class="link-card" href="/use-cases/query-csv-with-sql.html"><h3>Query CSV with SQL</h3><p>Use DuckDB to filter, group and join CSV files without database setup.</p></a>
+      <a class="link-card" href="/use-cases/convert-excel-to-parquet.html"><h3>Convert Excel to Parquet</h3><p>Turn spreadsheet exports into compact analytical files for downstream work.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="section code-section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">SQL-first</p>
+      <h2>Use plain SQL to bend ugly data into shape.</h2>
+      <p>No visual pipeline ceremony. No cloud job. No database server. Just a file, a query, and clean output.</p>
+      <a class="text-link" href="/examples.html">See more examples →</a>
+    </div>
+    <pre class="code"><code>select
+  trim(customer_name) as customer_name,
+  try_cast(order_date as date) as order_date,
+  replace(amount, ',', '.')::decimal(18,2) as amount
+from imported_excel
+where customer_name is not null
+order by order_date desc;</code></pre>
+  </div>
+</section>
+
+<section class="section alternate">
+  <div class="container faq-grid">
+    <div>
+      <p class="eyebrow">Questions people search for</p>
+      <h2>Quick answers.</h2>
+    </div>
+    <div class="faq-list">
+      <details open><summary>Can Bendit open Excel files?</summary><p>Yes. Bendit is built for importing Excel files and turning messy worksheets into queryable data.</p></details>
+      <details><summary>Does Bendit upload my data?</summary><p>No. The product is designed around local-first file transformation. Your files stay on your machine.</p></details>
+      <details><summary>Does Bendit use DuckDB?</summary><p>Yes. DuckDB is the SQL engine behind Bendit’s file transformation workflow.</p></details>
+      <details><summary>Is Bendit a BI tool?</summary><p>No. Bendit is focused on cleaning, reshaping and exporting data files, not dashboards.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta section">
+  <div class="container cta-box">
+    <p class="eyebrow">Ready to test it?</p>
+    <h2>Download Bendit and try it on one messy file.</h2>
+    <p>Best test: take a real Excel or CSV export that normally annoys you and try cleaning it with SQL.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download for Windows</a>
+      <a class="button button-secondary" href="/show-hn.html">Read the HN version</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="/"><img src="/assets/bendit-logo.png?v=20260710" width="30" height="30" alt="" aria-hidden="true" loading="lazy" decoding="async"><span>Bendit</span></a>
+        <p class="muted">A local DuckDB workbench for messy Excel, CSV and Parquet files.</p>
+      </div>
+      <div>
+        <h2>Use cases</h2>
+        <ul>
+          <li><a href="/use-cases/clean-messy-excel-files.html">Clean messy Excel files</a></li><li><a href="/use-cases/query-csv-with-sql.html">Query CSV with SQL</a></li><li><a href="/use-cases/convert-excel-to-parquet.html">Convert Excel to Parquet</a></li><li><a href="/use-cases/duckdb-desktop-client.html">DuckDB desktop client</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="/examples.html">Examples</a></li>
+          <li><a href="/show-hn.html">Show HN page</a></li>
+          <li><a href="/releases.html">Releases</a></li>
+          <li><a href="mailto:support@bend-it.net">Email support</a></li>
+          <li><a data-config="githubRepo" href="https://github.com/arjan123/bendit-static-site-v5">GitHub repo</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/support.html">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <p><a data-config="supportEmail" href="mailto:support@bend-it.net">support@bend-it.net</a></p>
+        <p><a data-config="paypalUrl" href="https://www.paypal.com/donate">Donate via PayPal</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

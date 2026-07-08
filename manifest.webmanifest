@@ -1,1 +1,13 @@
-{"name":"Bendit","short_name":"Bendit","start_url":"/","display":"standalone","background_color":"#0a0a12","theme_color":"#0a0a12","icons":[{"src":"/favicon.png","sizes":"128x128","type":"image/png"}]}
+{
+  "name": "Bendit",
+  "short_name": "Bendit",
+  "description": "A local DuckDB workbench for messy Excel, CSV and Parquet files.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f9ff",
+  "theme_color": "#185cff",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a Bendit bug or crash
+title: "Bug: "
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the problem clearly.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Bendit version
+      placeholder: 0.1.0
+  - type: dropdown
+    id: file-type
+    attributes:
+      label: File type
+      options:
+        - Excel
+        - CSV
+        - Parquet
+        - Other
+  - type: input
+    id: file-size
+    attributes:
+      label: File size / row count
+      placeholder: 50 MB / 300k rows
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: 1. Import file...
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result

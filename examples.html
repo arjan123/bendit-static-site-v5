@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bendit support</title>
-  <meta name="description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
-  <link rel="canonical" href="https://bend-it.net/support.html">
+  <title>Bendit examples - clean files with DuckDB SQL</title>
+  <meta name="description" content="Practical DuckDB SQL examples for cleaning messy Excel and CSV files locally with Bendit.">
+  <link rel="canonical" href="https://bend-it.net/examples.html">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bendit">
-  <meta property="og:title" content="Bendit support">
-  <meta property="og:description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
-  <meta property="og:url" content="https://bend-it.net/support.html">
+  <meta property="og:title" content="Bendit examples - clean files with DuckDB SQL">
+  <meta property="og:description" content="Practical DuckDB SQL examples for cleaning messy Excel and CSV files locally with Bendit.">
+  <meta property="og:url" content="https://bend-it.net/examples.html">
   <meta property="og:image" content="https://bend-it.net/assets/og-image.png?v=20260710">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bendit support">
-  <meta name="twitter:description" content="Email support for Bendit — bugs, file import issues and transformation feature requests.">
+  <meta name="twitter:title" content="Bendit examples - clean files with DuckDB SQL">
+  <meta name="twitter:description" content="Practical DuckDB SQL examples for cleaning messy Excel and CSV files locally with Bendit.">
   <link rel="icon" href="/assets/favicon.png?v=20260710" type="image/png">
   <link rel="apple-touch-icon" href="/assets/icon-192.png?v=20260710">
   <link rel="manifest" href="/manifest.webmanifest?v=20260710">
@@ -23,7 +23,20 @@
   <script defer src="/site.config.js?v=20260710"></script>
   <script defer src="/assets/site.js?v=20260710"></script>
   
-  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Bendit examples for DuckDB SQL transformations",
+  "author": {
+    "@type": "Person",
+    "name": "Arjan van Dijk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Bendit"
+  },
+  "url": "https://bend-it.net/examples.html"
+}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -35,11 +48,11 @@
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="/">Home</a>
-<a href="/examples.html">Examples</a>
+<a href="/examples.html" aria-current="page">Examples</a>
 <a href="/download.html">Download</a>
 <a href="/show-hn.html">Show HN</a>
 <a data-config="githubRepo" href="https://github.com/arjan123/bendit-static-site-v5">GitHub</a>
-<a href="/support.html" aria-current="page">Support</a>
+<a href="/support.html">Support</a>
       </nav>
       <a class="button button-small" data-config="downloadUrl" href="/downloads/Bendit-Windows-x64.zip">Download</a>
     </div>
@@ -48,22 +61,34 @@
     
 <section class="section">
   <div class="container narrow">
-    <p class="eyebrow">Support</p>
-    <h1>Support for Bendit.</h1>
-    <p class="lead">Found a bug, missing a file transformation feature, or want to share a nasty Excel/CSV case? Email us directly — no account needed.</p>
-    <div class="support-card">
-      <h2>Email support</h2>
-      <p class="muted">Best for bugs, feature requests, file import issues and reproducible transformation problems.</p>
-      <a class="button button-primary" href="mailto:support@bend-it.net">Email support@bend-it.net</a>
-    </div>
-    <h2>Useful details to include</h2>
-    <ul class="check-list">
-      <li>What file type you used: Excel, CSV or Parquet</li>
-      <li>Approximate file size and number of rows</li>
-      <li>What you expected Bendit to do</li>
-      <li>What happened instead</li>
-      <li>A small anonymized sample file, if possible</li>
-    </ul>
+    <p class="eyebrow">Examples</p>
+    <h1>Example DuckDB SQL transformations for messy files.</h1>
+    <p class="lead">These examples are intentionally boring. That is the point. Bendit is for real-world file cleanup work.</p>
+    <a class="button button-secondary" href="/assets/sample-orders.csv?v=20260710">Download sample CSV</a>
+    <h2>Clean names, dates and amounts</h2>
+    <pre class="code"><code>select
+  trim(customer_name) as customer_name,
+  try_cast(order_date as date) as order_date,
+  replace(amount, ',', '.')::decimal(18,2) as amount
+from orders
+where customer_name is not null;</code></pre>
+    <h2>Find duplicate customer names</h2>
+    <pre class="code"><code>select
+  lower(trim(customer_name)) as normalized_name,
+  count(*) as count
+from orders
+group by normalized_name
+having count(*) &gt; 1
+order by count desc;</code></pre>
+    <h2>Export a clean subset</h2>
+    <pre class="code"><code>select
+  order_id,
+  customer_name,
+  order_date,
+  amount
+from clean_orders
+where amount &gt; 0
+order by order_date;</code></pre>
   </div>
 </section>
 
